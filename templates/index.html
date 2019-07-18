@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Form</title>
+		<style type="text/css">
+			body{
+				font-family: "Segoe UI Light";
+				text-decoration:none;
+			}
+			table{
+				margin: 10px;
+			}
+			td{
+				padding: 5px;
+			}
+			input{
+				padding: 7px;
+			}
+			.card{
+				margin: 40px;
+				padding: 10px;
+				border-radius: 3px;
+				width: fit-content;
+				box-shadow: 3px 3px 10px 3px #aaaaaa;
+				border-radius: 3px;
+			}
+			.btn{
+				font-size: 1em;
+				background-color: #4ab19d;
+				text-decoration: none;
+				color: white;
+				border: none;
+				padding: 10px;
+				font-family: "Segoe UI Light";
+				border-radius: 3px;
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<div class="card">
+				<h3>Check your admission chances in masters program!</h3>
+				<form method="POST" action="/result">
+					<table>
+						<tr>
+							<td>Your GRE Score: </td><td><input type="text" name="gre"/></td>
+						</tr>
+						<tr>
+							<td>Your TOEFL Score: </td><td><input type="text" name="toefl"/></td>
+						</tr>
+						<!-- <tr>
+							<td>Your CGPA(Scale of 10): </td><td><input type="text" name="cgpa"/></td>
+						</tr> -->
+						<tr>
+							<td>University Rating: </td><td><input type="text" name="ur"/></td>
+						</tr>
+						<tr>
+							<td>Rate your SOP on a scale of 5: </td><td><input type="text"  name="sop"/></td>
+						</tr>
+						<tr>
+							<td>Rate your LOR on a scale of 5: </td><td><input type="text"  name="lor"/></td>
+						</tr>
+						<tr>
+							<td>Research Experience: </td>
+							<td>
+								<select name="research">
+									<option value="1">Yes</option>
+									<option value="0">No</option>
+								</select>
+							</td>
+						</tr>
+						<tr></tr>
+						<tr>
+							<td colspan="2"><center><input type="submit" value="GO" class="btn"></center></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</center>
+	</body>
+</html>
