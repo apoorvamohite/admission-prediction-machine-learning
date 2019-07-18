@@ -20,13 +20,15 @@ features = data.iloc[:, 1:8]
 features.drop(['CGPA'], axis=1, inplace=True)
 result = data.iloc[:, 8:9]
 
-X_train, X_test, y_train, y_test = train_test_split(features, result,
+'''X_train, X_test, y_train, y_test = train_test_split(features, result,
                                                     random_state = 23,
                                                     test_size=0.5)
-
+'''
+#print(features.head())
 reg = LinearRegression()
-reg.fit(X_train, y_train)
-pred = reg.predict(X_test)
+#reg.fit(X_train, y_train)
+reg.fit(features, result)
+#pred = reg.predict(X_test)
 '''acc = reg.score(X_test, y_test)
 mse = mean_squared_error(y_test, pred)'''
 

@@ -18,13 +18,13 @@ def ValuePredictor(to_predict_list):
     #data = pd.DataFrame(to_predict_list)
     #data = data[[4, 6, 5, 3, 2, 0, 1]]
     to_predict = np.asarray(to_predict_list)
-    myorder = [3, 5, 3, 2, 0, 1]
+    #myorder = [3, 5, 4, 2, 0, 1]
     #myorder = [5, 1, 0, 3, 2, 4]
-    to_predict = [to_predict[i] for i in myorder]
+    #to_predict = [to_predict[i] for i in myorder]
     loaded_model = pickle.load(open("model.pkl","rb"), encoding = 'latin1')
-    result = loaded_model.predict([map(float,to_predict)])
-    return result[0][0]*10
-    #return to_predict_list
+    result = loaded_model.predict([list(map(float,to_predict))])
+    return result[0][0]*100
+    #return to_predict
 
 
 @app.route('/result',methods = ['POST'])
@@ -32,7 +32,6 @@ def result():
     if request.method == 'POST':
         to_predict_list = request.form.to_dict()
         to_predict_list=list(to_predict_list.values())
-        to_predict_list = list(to_predict_list)
         result = ValuePredictor(to_predict_list)
             
         return render_template("result.html",prediction=result)
