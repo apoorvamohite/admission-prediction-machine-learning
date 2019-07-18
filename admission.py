@@ -1,12 +1,13 @@
 import pandas as pd
 import numpy as np
-#import matplotlib.pyplot as plt
-#import seaborn as sns
+from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-'''from sklearn.metrics import mean_squared_error
+
+'''import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score'''
 
-from sklearn.linear_model import LinearRegression
 '''from sklearn.svm import LinearSVR
 from sklearn.svm import SVR
 from sklearn.ensemble import BaggingRegressor
@@ -28,8 +29,8 @@ result = data.iloc[:, 8:9]
 reg = LinearRegression()
 #reg.fit(X_train, y_train)
 reg.fit(features, result)
-#pred = reg.predict(X_test)
-'''acc = reg.score(X_test, y_test)
+'''pred = reg.predict(X_test)
+acc = reg.score(X_test, y_test)
 mse = mean_squared_error(y_test, pred)'''
 
 import pickle
